@@ -1,6 +1,6 @@
 {
   "name": "beet-cl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "another component library",
   "main": "dist/main.bundle.js",
   "scripts": {
