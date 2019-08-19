@@ -1,8 +1,9 @@
 node_modules
+build
+dist
 .idea
 *.log
 temp
 .eslintcache
-dist
 .docz
 *.psd

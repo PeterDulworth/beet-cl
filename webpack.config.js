@@ -1,11 +1,14 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+var path = require('path');
 
 module.exports = {
   entry: './src/index.js',
   output: {
 		// should match package.json "main" field
-    filename: '[name].bundle.js',
-    path: __dirname + '/dist',
+    // filename: '[name].bundle.js',
+    // path: __dirname + '/dist',
+    path: path.resolve(__dirname, 'build'),
+    filename: 'index.js',
     publicPath: '',
     libraryTarget: 'commonjs2',
   },
@@ -13,7 +16,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
+        exclude: /(node_modules|build|dist)/,
         use: {
           loader: "babel-loader"
         }
@@ -21,8 +24,8 @@ module.exports = {
       {                
         test: [/.css$|.scss$/],
         use:[                    
-          MiniCssExtractPlugin.loader,
-          // 'style-loader',                  
+          // MiniCssExtractPlugin.loader,
+          'style-loader',                  
           'css-loader',
           'sass-loader'
         ]            
@@ -45,9 +48,9 @@ module.exports = {
 	resolve: {
 		extensions: ['.scss', '.js', '.json', '.png', '.gif', '.jpg', '.svg'],
 	},
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'style.css' 
-    })
-  ]
+  // plugins: [
+  //   new MiniCssExtractPlugin({
+  //     filename: 'style.css' 
+  //   })
+  // ]
 };

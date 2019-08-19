@@ -2,7 +2,7 @@
   "name": "beet-cl",
   "version": "1.0.3",
   "description": "another component library",
-  "main": "dist/main.bundle.js",
+  "main": "build/index.js",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack --mode development",
