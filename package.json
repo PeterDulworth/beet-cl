@@ -20,6 +20,10 @@
     "type": "git",
     "url": "git+https://github.com/PeterDulworth/beet-cl.git"
   },
+  "bugs": {
+    "url": "https://github.com/PeterDulworth/beet-cl/issues"
+  },
+  "homepage": "https://github.com/PeterDulworth/beet-cl#readme",
   "author": "Peter Dulworth",
   "license": "MIT",
   "devDependencies": {
