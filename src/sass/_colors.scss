@@ -1,43 +1,43 @@
 $colors: (
-  transparent: (
-    core: transparent
-  ),
-  white: (
-    core: #fff
-  ),
-  black: (
-    core: #000
-  ),
-  red: (
-    core: #f53d4e,
-    highlight: #ff575f
-  ),
-  blue: (
-    core: #085ff7,
-    highlight: #1497ff
-  ),
-  green: (
-    core: #00b887,
-    highlight: #32dba3
-  ),
-  orange: (
-    core: #ff5a1f,
-    highlight: #ff6c40
-  ),
-  purple: (
-    core: #6c45f7,
-    highlight: #816bff
-  ),
-  yellow: (
-    core: #fce356,
-    highlight: #fceb6a
-  ),
-  pink: (
-    core: #f067e4,
-    highlight: #f57aeb
-  )
+    transparent: (
+        core: transparent,
+    ),
+    white: (
+        core: #fff,
+    ),
+    black: (
+        core: #000,
+    ),
+    red: (
+        core: #f53d4e,
+        highlight: #ff575f,
+    ),
+    blue: (
+        core: #085ff7,
+        highlight: #1497ff,
+    ),
+    green: (
+        core: #00b887,
+        highlight: #32dba3,
+    ),
+    orange: (
+        core: #ff5a1f,
+        highlight: #ff6c40,
+    ),
+    purple: (
+        core: #6c45f7,
+        highlight: #816bff,
+    ),
+    yellow: (
+        core: #fce356,
+        highlight: #fceb6a,
+    ),
+    pink: (
+        core: #f067e4,
+        highlight: #f57aeb,
+    ),
 );
 
 @function get-color($color-name, $color-family: core) {
-  @return map-get(map-get($colors, $color-name), $color-family);
+    @return map-get(map-get($colors, $color-name), $color-family);
 }

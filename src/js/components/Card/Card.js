@@ -3,9 +3,7 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 
 const Card = ({ children, ...otherProps }) => (
-  <div className="bcl-Card">
-    {children}
-  </div>
+    <div className='bcl-Card'>{children}</div>
 );
 
 Card.propTypes = {

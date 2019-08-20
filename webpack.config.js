@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = {
   entry: './src/index.js',
   output: {
-		// should match package.json "main" field
+    // should match package.json "main" field
     path: path.resolve(__dirname, 'build'),
     filename: 'index.js', // webpack will produce: build/index.js
     publicPath: '',
@@ -15,12 +15,12 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components|build|dist|storybook-static)/,
         use: {
-          loader: "babel-loader" // .babelrc has additional settings 
-        }
+          loader: 'babel-loader', // .babelrc has additional settings
+        },
       },
-      {                
+      {
         test: [/.css$|.scss$/],
-        use: [                    
+        use: [
           'style-loader',
           'css-loader',
           'sass-loader',
@@ -29,10 +29,13 @@ module.exports = {
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: require(path.join(process.cwd(), '../src/sass/index.js')),
-            }
-          }
-        ]            
+              resources: require(path.join(
+                process.cwd(),
+                '../src/sass/index.js',
+              )),
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -41,18 +44,18 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'assets/images'
-            }
-          }
-        ]
-      }
-    ]
+              outputPath: 'assets/images',
+            },
+          },
+        ],
+      },
+    ],
   },
-  	// define explicitly the file types we intend to deal with
-	resolve: {
-		extensions: ['.scss', '.js', '.json', '.png', '.gif', '.jpg', '.svg'],
+  // define explicitly the file types we intend to deal with
+  resolve: {
+    extensions: ['.scss', '.js', '.json', '.png', '.gif', '.jpg', '.svg'],
   },
-  externals: { 
-    'react': 'commonjs react' 
-  }
+  externals: {
+    react: 'commonjs react',
+  },
 };

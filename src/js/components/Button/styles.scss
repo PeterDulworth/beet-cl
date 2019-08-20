@@ -30,7 +30,7 @@
         &:disabled {
             --color-dark: #999;
             cursor: not-allowed;
-              /* see https://www.bram.us/2016/10/06/emoji-silhouettes-and-emoji-outlines-with-css/ */
+            /* see https://www.bram.us/2016/10/06/emoji-silhouettes-and-emoji-outlines-with-css/ */
             color: transparent;
             text-shadow: 0 0 0 var(--color-dark);
         }

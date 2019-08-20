@@ -3,9 +3,11 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 
 const Button = ({ children, onClick, ...otherProps }) => (
-  <div className="bcl-Button">
-    <button onClick={onClick} {...otherProps}>{children}</button>
-  </div>
+    <div className='bcl-Button'>
+        <button onClick={onClick} {...otherProps}>
+            {children}
+        </button>
+    </div>
 );
 
 Button.propTypes = {

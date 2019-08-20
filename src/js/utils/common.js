@@ -1,3 +1,3 @@
 export const buildClassName = (name) => {
-    return `bcl-${name}`
+    return `bcl-${name}`;
 };
