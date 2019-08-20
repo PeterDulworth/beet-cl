@@ -6,10 +6,10 @@
 // When you add this file, we won't add the default configurations which is similar
 // to "React Create App". This only has babel loader to load JavaScript.
 
+var path = require('path');
+
 module.exports = {
-  plugins: [
-    // your custom plugins
-  ],
+  plugins: [],
   module: {
     rules: [
       {                
@@ -17,7 +17,13 @@ module.exports = {
         use:[                    
           'style-loader',                  
           'css-loader',
-          'sass-loader'
+          'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: require(path.join(process.cwd(), 'src/sass/index.js')),
+            }
+          }
         ]            
       }
     ],

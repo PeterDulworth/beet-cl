@@ -1,10 +1,10 @@
 import React from 'react';
-import './style.scss';
+import './styles.scss';
 import PropTypes from 'prop-types';
 
-const Button = ({ children }) => (
+const Button = ({ children, onClick, ...otherProps }) => (
   <div className="bcl-Button">
-    <button>{children}</button>
+    <button onClick={onClick} {...otherProps}>{children}</button>
   </div>
 );
 

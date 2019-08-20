@@ -1,33 +1,37 @@
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var path = require('path');
 
 module.exports = {
   entry: './src/index.js',
   output: {
 		// should match package.json "main" field
-    // filename: '[name].bundle.js',
-    // path: __dirname + '/dist',
     path: path.resolve(__dirname, 'build'),
-    filename: 'index.js',
+    filename: 'index.js', // webpack will produce: build/index.js
     publicPath: '',
-    libraryTarget: 'commonjs2',
+    libraryTarget: 'commonjs2', // important for deploying to NPM
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|build|dist)/,
+        exclude: /(node_modules|bower_components|build|dist)/,
         use: {
-          loader: "babel-loader"
+          loader: "babel-loader" // .babelrc has additional settings 
         }
       },
       {                
         test: [/.css$|.scss$/],
-        use:[                    
-          // MiniCssExtractPlugin.loader,
-          'style-loader',                  
+        use: [                    
+          'style-loader',
           'css-loader',
-          'sass-loader'
+          'sass-loader',
+          // we use sass-resources-loader for scss resources we want to be globally available (like mixins and variables)
+          // source: https://itnext.io/sharing-sass-resources-with-sass-resources-loader-and-webpack-ca470cd11746
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: require(path.join(process.cwd(), '../src/sass/index.js')),
+            }
+          }
         ]            
       },
       {
@@ -47,10 +51,8 @@ module.exports = {
   	// define explicitly the file types we intend to deal with
 	resolve: {
 		extensions: ['.scss', '.js', '.json', '.png', '.gif', '.jpg', '.svg'],
-	},
-  // plugins: [
-  //   new MiniCssExtractPlugin({
-  //     filename: 'style.css' 
-  //   })
-  // ]
+  },
+  externals: { 
+    'react': 'commonjs react' 
+  }
 };

@@ -1,0 +1,46 @@
+.bcl-TextInput {
+    input {
+        padding: 16px;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 0.25rem;
+        border-color: gray;
+        color: black;
+        outline: none;
+        width: 100%;
+        min-width: 112px;
+        outline-offset: 0;
+        
+        &:focus {
+            background: white;
+            border-color: black;
+        }
+        
+        &:disabled {
+            background-color: gray;
+            border-color: gray;
+            color: gray;
+        }
+        
+        &.is-error {
+            background-color: white;
+            border-color: red;
+        }
+    }
+
+    .bcl-TextInput__label {
+        // color:
+    // set-type: size4, bold
+    }
+
+    .bcl-TextInput__help {
+        // color
+        // set type, 3, extraloose
+        display: inline-block;
+    }
+      
+    .bcl-TextInput__error {
+        // color
+        // set type 3 extra loose
+    }
+}

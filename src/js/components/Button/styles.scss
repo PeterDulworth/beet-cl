@@ -1,0 +1,48 @@
+.bcl-Button {
+    button {
+        // reset default button styles
+        border: none;
+        padding: 0;
+        margin: 0;
+
+        // button styles
+        --color-dark: #333;
+        --color-light: #fff;
+        display: block;
+        position: relative;
+        font-size: 2rem;
+        padding: 1rem 2rem;
+        border-radius: 0.4rem;
+        background: var(--color-light);
+        color: var(--color-dark);
+        border: 0.2rem solid var(--color-dark);
+        box-shadow: 0 0.2rem 0 0 var(--color-dark);
+
+        // min size for mobile devices
+        min-width: 1cm;
+        min-height: 1cm;
+
+        &:active {
+            top: 0.2rem;
+            box-shadow: none;
+        }
+
+        &:disabled {
+            --color-dark: #999;
+            cursor: not-allowed;
+              /* see https://www.bram.us/2016/10/06/emoji-silhouettes-and-emoji-outlines-with-css/ */
+            color: transparent;
+            text-shadow: 0 0 0 var(--color-dark);
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0.2rem 0 0 var(--color-dark), 0 2px 5px 3px #f0f;
+        }
+
+        &:active:focus {
+            top: 0.2rem;
+            box-shadow: 0 0px 6px 4px #f0f;
+        }
+    }
+}
