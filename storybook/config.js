@@ -1,6 +1,7 @@
-import React from 'react';
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { themes } from '@storybook/theming';
+import { CenterDecorator } from './decorators';
+import beetLight from './theme.js';
 
 // automatically import all files ending in *.stories.js
 // const req = require.context('../stories', true, /\.stories\.js$/);
@@ -10,17 +11,12 @@ const loadStories = () => {
   req.keys().forEach(filename => req(filename));
 };
 
-configure(loadStories, module);
-
 addParameters({
   options: {
-    theme: themes.dark,
+    theme: themes.light,
   },
 });
 
-// center decorator
-const CenterDecorator = (storyFn) => <div style={{ textAlign: 'center' }}>
-  {storyFn()}
-</div>;
-
 addDecorator(CenterDecorator);
+
+configure(loadStories, module);

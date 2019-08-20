@@ -7,8 +7,8 @@
     "build": "webpack --mode production",
     "dev": "webpack --mode development",
     "start": "webpack-dev-server --open --mode development",
-    "storybook": "start-storybook -p 9001",
-    "build-storybook": "build-storybook -s public"
+    "storybook": "start-storybook -p 9001 -c storybook",
+    "build-storybook": "build-storybook -s public -c storybook"
   },
   "keywords": [
     "react",
@@ -47,6 +47,7 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "path": "^0.12.7",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
