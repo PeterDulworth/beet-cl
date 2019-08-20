@@ -1,4 +1,5 @@
 # beet-cl
+[![Build Status](https://travis-ci.com/PeterDulworth/beet-cl.svg?branch=master)](https://travis-ci.com/PeterDulworth/beet-cl)
 another component library
 
 ### using
