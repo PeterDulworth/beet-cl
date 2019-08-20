@@ -8,7 +8,7 @@
     "dev": "webpack --mode development",
     "start": "webpack-dev-server --open --mode development",
     "storybook": "start-storybook -p 9001",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -s public"
   },
   "keywords": [
     "react",

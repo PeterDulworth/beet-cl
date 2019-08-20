@@ -13,7 +13,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components|build|dist)/,
+        exclude: /(node_modules|bower_components|build|dist|storybook-static)/,
         use: {
           loader: "babel-loader" // .babelrc has additional settings 
         }
