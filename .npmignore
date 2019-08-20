@@ -3,3 +3,5 @@ src
 .travis.yml
 RESOURCES.md
 webpack.config.js
+.babelrc
+storybook-static
