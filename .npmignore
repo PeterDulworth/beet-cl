@@ -1,7 +1,10 @@
-src
 .travis.yml
 RESOURCES.md
 webpack.config.js
 .babelrc
 storybook
 storybook-static
+
+# ignore everything in src except the sass folder
+src/*
+!src/sass

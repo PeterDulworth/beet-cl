@@ -13,7 +13,7 @@ const loadStories = () => {
 
 addParameters({
   options: {
-    theme: themes.light,
+    theme: beetLight,
   },
 });
 

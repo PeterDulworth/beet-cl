@@ -1,13 +1,18 @@
 import React from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
+import { bclClassNames } from '../../utils/common';
 
-const Card = ({ children, ...otherProps }) => (
-    <div className='bcl-Card'>{children}</div>
-);
+const Card = ({ children, ...otherProps }) => {
+    const classes = bclClassNames('Card');
+
+    return <div className={classes}>{children}</div>;
+};
 
 Card.propTypes = {
-    children: PropTypes.string.isRequired,
+    children: PropTypes.any.isRequired,
 };
+
+Card.displayName = 'Card';
 
 export default Card;

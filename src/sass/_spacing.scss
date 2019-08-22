@@ -17,3 +17,52 @@ $bcl-spacing-sizes: (
     xl: $bcl-space-xl,
     xxl: $bcl-space-xxl,
 );
+
+// margin bottom
+@mixin bcl-space-stack($size, $excludeLast: true) {
+    $stack: map-get($bcl-spacing-sizes, $size);
+    margin-bottom: $stack;
+
+    @if $excludeLast == false {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// margin right
+@mixin bcl-space-inline($size, $excludeLast: true) {
+    $inline: map-get($bcl-spacing-sizes, $size);
+    margin-bottom: $inline;
+
+    @if $excludeLast == false {
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+// padding
+@mixin bcl-space-inset($size, $directions: null) {
+    $inset: map-get($bcl-spacing-sizes, $size);
+
+    @if $directions == lr {
+        padding-left: $inset;
+        padding-right: $inset;
+    } @else if $directions == tb {
+        padding-top: $inset;
+        padding-bottom: $inset;
+    } @else if $directions == t {
+        padding-top: $inset;
+    } @else if $directions == b {
+        padding-bottom: $inset;
+    } @else if $directions == l {
+        padding-left: $inset;
+    } @else if $directions == r {
+        padding-right: $inset;
+    } @else if ($directions == null or $directions == all) {
+        padding: $inset;
+    } @else if $directions != null {
+        @error "`#{$directions}` is not a valid directions.";
+    }
+}

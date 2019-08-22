@@ -29,10 +29,7 @@ module.exports = {
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: require(path.join(
-                process.cwd(),
-                '../src/sass/index.js',
-              )),
+              resources: require(path.join(process.cwd(), 'src/sass/index.js')),
             },
           },
         ],
