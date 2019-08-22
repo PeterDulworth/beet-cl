@@ -8,15 +8,20 @@ import beetLight from './theme.js';
 const req = require.context('../src/js/components', true, /[^/]+\/stories.js$/);
 
 const loadStories = () => {
-  req.keys().forEach(filename => req(filename));
+    req.keys().forEach((filename) => req(filename));
 };
 
 addParameters({
-  options: {
-    theme: beetLight,
-  },
+    options: {
+        theme: beetLight,
+    },
+});
+
+addParameters({
+    backgrounds: [{ name: 'twitter', value: '#00aced' }, { name: 'facebook', value: '#3b5998' }],
 });
 
 addDecorator(CenterDecorator);
 
+// this should be the last call
 configure(loadStories, module);

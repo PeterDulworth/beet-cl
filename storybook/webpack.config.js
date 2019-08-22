@@ -12,19 +12,24 @@ module.exports = {
   plugins: [],
   module: {
     rules: [
-      {                
+      {
         test: [/.css$|.scss$/],
-        use:[                    
-          'style-loader',                  
+        use: [
+          'style-loader',
           'css-loader',
           'sass-loader',
           {
             loader: 'sass-resources-loader',
             options: {
               resources: require(path.join(process.cwd(), 'src/sass/index.js')),
-            }
-          }
-        ]            
+            },
+          },
+        ],
+      },
+      {
+        test: /stories\.js?$/,
+        loaders: [require.resolve('@storybook/addon-storysource/loader')],
+        enforce: 'pre',
       },
     ],
   },
