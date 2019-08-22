@@ -4,6 +4,7 @@ webpack.config.js
 .babelrc
 storybook
 storybook-static
+coverage
 
 # ignore everything in src except the sass folder
 src/*
