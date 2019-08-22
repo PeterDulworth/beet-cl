@@ -3,14 +3,12 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 import { bclClassNames } from '../../utils/common';
 
-const Anchor = ({ children, href, newTab, ...otherProps }) => {
+const Anchor = ({ children, href, openNewTab, ...customProps }) => {
     const classes = bclClassNames('Anchor');
-    const newTabSettings = newTab
-        ? { target: '_blank', rel: 'noopener noreferrer' }
-        : {};
+    const newTabSettings = openNewTab ? { target: '_blank', rel: 'noopener noreferrer' } : {};
 
     return (
-        <a className={classes} href={href} {...newTabSettings} {...otherProps}>
+        <a className={classes} {...customProps} href={href} {...newTabSettings}>
             {children}
         </a>
     );
@@ -19,7 +17,7 @@ const Anchor = ({ children, href, newTab, ...otherProps }) => {
 Anchor.propTypes = {
     children: PropTypes.string.isRequired,
     href: PropTypes.string.isRequired,
-    newTab: PropTypes.bool.isRequired,
+    openNewTab: PropTypes.bool,
 };
 
 export default Anchor;

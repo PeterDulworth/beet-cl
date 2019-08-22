@@ -1,2 +1,16 @@
+// TODO figure out how to import this top level
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,900&display=swap');
+
 .bcl-Anchor {
+    color: get-color(brand, beet);
+    text-decoration: none;
+    font-family: 'Nunito Sans', sans-serif;
+
+    &:hover,
+    &:active {
+        text-decoration: underline;
+    }
+
+    &:visited {
+    }
 }

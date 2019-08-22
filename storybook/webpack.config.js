@@ -26,6 +26,7 @@ module.exports = {
           },
         ],
       },
+      // story source addon
       {
         test: /stories\.js?$/,
         loaders: [require.resolve('@storybook/addon-storysource/loader')],
