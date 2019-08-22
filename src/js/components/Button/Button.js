@@ -32,6 +32,11 @@ const Button = ({
 
 Button.propTypes = {
     children: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired,
+    onMouseOver: PropTypes.func,
+    onMouseOut: PropTypes.func,
+    primary: PropTypes.bool,
+    disabled: PropTypes.bool,
 };
 
 Button.displayName = 'Button';

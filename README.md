@@ -2,7 +2,6 @@
 
 > a react component library 
 
-
 [![Build Status](https://travis-ci.com/PeterDulworth/beet-cl.svg?branch=master)](https://travis-ci.com/PeterDulworth/beet-cl)
 [![npm package](https://img.shields.io/npm/v/beet-cl.svg?color=1497ff)](npm)
 [![npm downloads](https://img.shields.io/npm/dw/beet-cl.svg?color=3d138d)](npm)
