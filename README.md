@@ -1,4 +1,4 @@
-<img src="storybook/public/beet-cl-logo.svg" width="250px">
+<img src="https://peterdulworth.github.io/beet-cl/beet-cl-logo.svg" width="250px">
 
 > a react component library 
 
