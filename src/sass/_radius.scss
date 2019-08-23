@@ -1,0 +1,16 @@
+$bcl-border-radii: (
+    none: 0,
+    xxs: 0.05rem,
+    xs: 0.1rem,
+    sm: 0.2rem,
+    md: 0.4rem,
+    lg: 0.8rem,
+    xl: 1.6rem,
+    xxl: 100rem,
+);
+
+// border radius
+@mixin bcl-radius($size) {
+    $stack: map-get($bcl-spacing-sizes, $size);
+    border-radius: $stack;
+}

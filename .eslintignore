@@ -1,0 +1,7 @@
+*.md
+storybook-static
+build/**
+node_modules/**
+coverage/**
+*-test.js
+**/stories.js

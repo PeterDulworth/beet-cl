@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
-import { bclClassNames } from '../../utils/common';
+import { bclPrefix } from '../../utils/common';
 
 const Button = ({
     children,
@@ -12,7 +12,7 @@ const Button = ({
     disabled,
     ...customProps
 }) => {
-    const classes = bclClassNames('Button');
+    const classes = bclPrefix('Button');
 
     return (
         <div className={classes}>

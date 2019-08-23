@@ -9,6 +9,9 @@
     "start": "webpack-dev-server --open --mode development",
     "storybook": "start-storybook -p 9001 -c storybook -s ./storybook/public",
     "build-storybook": "build-storybook -c storybook -s ./storybook/public",
+    "lint": "eslint src",
+    "lint-fix": "eslint src --fix",
+    "test-bundlesize": "bundlesize",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
@@ -21,7 +24,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PeterDulworth/beet-cl.git"
+    "url": "https://github.com/PeterDulworth/beet-cl.git"
   },
   "bugs": {
     "url": "https://github.com/PeterDulworth/beet-cl/issues"
@@ -40,11 +43,14 @@
     "@storybook/addon-storysource": "^5.1.11",
     "@storybook/addons": "^5.1.11",
     "@storybook/react": "^5.1.11",
+    "babel-eslint": "^10.0.2",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
+    "eslint": "^6.2.1",
+    "eslint-plugin-react": "^7.14.3",
     "file-loader": "^4.2.0",
     "jest": "^24.9.0",
     "node-sass": "^4.12.0",

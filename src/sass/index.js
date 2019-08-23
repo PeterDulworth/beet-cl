@@ -4,8 +4,12 @@
 // source: https://itnext.io/sharing-sass-resources-with-sass-resources-loader-and-webpack-ca470cd11746
 const path = require('path');
 
-const resources = [['_colors.scss'], ['_spacing.scss']];
+const resources = [
+    ['_colors.scss'],
+    ['_spacing.scss'],
+    ['_radius.scss'],
+    ['_reset.scss'],
+    ['_defaults.scss'],
+];
 
-module.exports = resources.map((filePath) =>
-    path.resolve(__dirname, ...filePath)
-);
+module.exports = resources.map((filePath) => path.resolve(__dirname, ...filePath));
