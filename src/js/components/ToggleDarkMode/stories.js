@@ -1,5 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import ToggleDarkMode from './ToggleDarkMode';
 
-storiesOf('ToggleDarkMode', module).add('default', () => <ToggleDarkMode isDarkMode={false} />);
+// manage the state of the toggle
+const DarkModeWrapper = ({ initialIsDark }) => {
+    const [isDark, setIsDark] = useState(initialIsDark);
+
+    return (
+        <ToggleDarkMode
+            isDarkMode={isDark}
+            onToggle={() => setIsDark((prevIsDark) => !prevIsDark)}
+        />
+    );
+};
+
+storiesOf('ToggleDarkMode', module)
+    .add('light', () => <DarkModeWrapper initialIsDark={false} />)
+    .add('dark', () => <DarkModeWrapper initialIsDark={true} />);

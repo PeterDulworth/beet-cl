@@ -6,9 +6,10 @@ import { bclPrefix } from '../../utils/common';
 /**
  * A reusable component to simplify inline SVG.
  * https://blog.lftechnology.com/using-svg-icons-components-in-react-44fbe8e5f91
+ * TODO: add option for non inline SVG
  */
-const SVG = ({ path, viewBox, size, color, lockAspectRatio = true }) => {
-    const classes = bclPrefix('SVG');
+const SVG = ({ path, viewBox, size, color, lockAspectRatio = true, className }) => {
+    const classes = `${bclPrefix('SVG')} ${className}`;
 
     // x[Min | Mid | Max]y[Min | Mid | Max] meet | slice
     const scale = lockAspectRatio ? 'xMidYMid meet' : 'none';
@@ -37,13 +38,8 @@ SVG.propTypes = {
     path: PropTypes.string.isRequired,
 
     /**
-     * The fill color of the SVG.
-     */
-    color: PropTypes.string.isRequired,
-
-    /**
-     * The dimensions of the SVG viewbox. This is used to determine the aspect ratio.
-     * This should match the viewbox in the SVG specification.
+     * The dimensions of the SVG view-box. This is used to determine the aspect ratio.
+     * This should match the view-box in the SVG specification.
      */
     viewBox: PropTypes.shape({
         width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -64,6 +60,16 @@ SVG.propTypes = {
      * Defaults to true.
      */
     lockAspectRatio: PropTypes.bool,
+
+    /**
+     * The fill color of the SVG.
+     */
+    color: PropTypes.string,
+
+    /**
+     * Optional classname for custom styles.
+     */
+    className: PropTypes.string,
 };
 
 export default SVG;
