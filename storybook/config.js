@@ -1,5 +1,4 @@
 import { configure, addDecorator, addParameters } from '@storybook/react';
-import { themes } from '@storybook/theming';
 import { CenterDecorator } from './decorators';
 import beetLight from './theme.js';
 

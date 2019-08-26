@@ -1,0 +1,52 @@
+.bcl-Spinner,
+.bcl-Spinner:before,
+.bcl-Spinner:after {
+    border-radius: 50%;
+}
+
+.bcl-Spinner {
+    --bcl-spinner-width: 3em;
+    --bcl-spinner-size: 0.5em;
+    position: relative;
+    font-size: 1px;
+    width: var(--bcl-spinner-width);
+    height: var(--bcl-spinner-width);
+    box-shadow: inset 0 0 0 var(--bcl-spinner-size);
+}
+
+.bcl-Spinner:before,
+.bcl-Spinner:after {
+    position: absolute;
+    content: '';
+}
+
+.bcl-Spinner:before {
+    width: calc(var(--bcl-spinner-width) / 2 + 0.2em);
+    height: calc(var(--bcl-spinner-width) + 0.2em);
+    background: white;
+    border-radius: calc(var(--bcl-spinner-width) + 0.2em) 0 0 calc(var(--bcl-spinner-width) + 0.2em);
+    top: -0.1em;
+    left: -0.1em;
+    transform-origin: calc(var(--bcl-spinner-width) / 2 + 0.2em) calc(var(--bcl-spinner-width) / 2 + 0.1em);
+    animation: load 2s infinite ease 1.5s;
+}
+
+.bcl-Spinner:after {
+    width: calc(var(--bcl-spinner-width) / 2 + 0.2em);
+    height: calc(var(--bcl-spinner-width) + 0.2em);
+    background: white;
+    border-radius: 0 calc(var(--bcl-spinner-width) + 0.2em) calc(var(--bcl-spinner-width) + 0.2em) 0;
+    top: -0.1em;
+    left: calc(var(--bcl-spinner-width) / 2 + 0.1em);
+    transform-origin: 0 calc(var(--bcl-spinner-width) / 2 + 0.1em);
+    animation: load 2s infinite ease;
+}
+
+@keyframes load {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
